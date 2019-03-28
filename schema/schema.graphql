@@ -1,0 +1,36 @@
+"An object with an ID"
+interface Node {
+  "The id of the object."
+  id: ID!
+}
+
+input PostWhereInput {
+  id: ID
+}
+
+input PostCreateInput {
+  title: String!
+  content: String!
+}
+
+type Post implements Node {
+  id: ID!
+  title: String!
+  content: String!
+}
+
+type Query {
+  posts (where: PostWhereInput): [Post]!
+
+   "Fetches an object given its ID"
+  node(
+    "The ID of an object"
+    id: ID!
+  ): Node
+}
+
+type Mutation {
+  createPost(data: PostCreateInput!): Post
+  updatePost(where: PostWhereInput!, data: PostCreateInput!): Post
+  deletePost(where: PostWhereInput!): Post
+}

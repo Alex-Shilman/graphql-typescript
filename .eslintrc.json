@@ -1,0 +1,13 @@
+{
+  "extends": "react-app",
+  "parser": "@typescript-eslint/parser",
+  "plugins": ["@typescript-eslint"],
+  "overrides": [
+    {
+      "files": ["*.ts", "*.tsx", "*.d.ts"],
+      "rules": {
+        "@typescript-eslint/no-unused-vars": [1, { "args": "none" }]
+      }
+    }
+  ]
+}

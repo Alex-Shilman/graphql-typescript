@@ -1,0 +1,9 @@
+{
+  "watch": ["src/server", "src/schema"],
+  "ext": "ts",
+  "ignore": ["src/**/*.spec.ts"],
+  "env": {
+    "TS_NODE_COMPILER_OPTIONS": "{ \"module\": \"commonjs\" }"
+  },
+  "exec": "ts-node --files src/server/index.ts"
+}
